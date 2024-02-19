@@ -5,6 +5,7 @@ import { Image } from "@astrojs/image/components";
 import { authors } from "@data/authors";
 import Pagetitle from "@components/pagetitle.astro";
 import Link from "@components/ui/link.astro";
+import pic from "@assets/authors/abi.jpg";
 ---
 
 <Layout title="About">
@@ -14,31 +15,25 @@ import Link from "@components/ui/link.astro";
       <Fragment slot="desc">I am vibes</Fragment>
     </Pagetitle>
 
-    <div class="gap-10 mx-auto max-w-4xl mt-12">
-      {
-        authors.slice(0, 3).map((item) => (
-          <div class="group w-full flex justify-center ">
-            <div>
-              <div class="aspect-square h-[500px] w-[500px]">
-                <Image
-                  src={item.image}
-                  format="jpg"
-                  width={2000}
-                  height={2000}
-                  alt="Team"
-                  class="w-full h-full rounded-xl transition  group-hover:-translate-y-1 group-hover:shadow-xl"
-                />
-              </div>
-            </div>
-          </div>
-        ))
-      }
+    <div class="mx-auto sm:mt-12 p-8 flex justify-center">
+      <div class=" aspect-square h-60 w-60 sm:h-[500px] sm:w-[500px]">
+        <Image
+          src={pic}
+          format="jpg"
+          width={500}
+          height={500}
+          alt="Team"
+          class="rounded-xl transition  group-hover:-translate-y-1 group-hover:shadow-xl object-scale-down"
+        />
+      </div>
     </div>
 
-    <div class="mx-auto max-w-xl text-center mt-14">
-      <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-        I was born and raised in South Africa and moved to the US in 2018. I live in Arlington Virgnia with my husband and two cats.
-      </p>
+    <div class="text-center sm:mt-14 w-full items-center ">
+      <div class="w-full justify-center flex">
+        <div class="text-lg  text-gray-600 dark:text-gray-400 max-w-xl">
+          I was born and raised in South Africa and moved to the US in 2018. I live in Arlington Virgnia with my husband and two cats.
+        </div>
+      </div>
       <div class="mt-8">
         <Link href="/contact" style="primary">Get in touch</Link>
       </div>
