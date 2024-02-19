@@ -3,15 +3,13 @@ import cx from "classnames";
 
 import { Image, Picture } from "@astrojs/image/components";
 import Label from "@components/ui/label.astro";
-import type { Author } from "@data/authors";
-import { authors } from "@data/authors";
 import type { Category } from "@data/category";
 import { categories } from "@data/category";
 import { getFormattedDate } from "@utils/all";
 import { Icon } from "astro-icon";
+import pic from "@assets/authors/abi.jpg";
 
 const { post, aspect, preloadImage } = Astro.props;
-const author = authors.find((item) => item.slug === post.data.author) as Author;
 const category = categories.find(
   (item) => item.slug === post.data.category
 ) as Category;
@@ -73,21 +71,18 @@ const category = categories.find(
   <div
     class="flex items-center mt-3 space-x-3 text-gray-500 dark:text-gray-400">
     <div class="flex items-center gap-3">
-      <div class="relative flex-shrink-0 w-5 h-5">
-        {
-          author.image && (
+      <div class="relative flex-shrink-0 w-8 h-8">
+       
             <Image
-              src={author.image}
+              src={pic}
               alt="Author Photo"
-              width={40}
-              height={40}
+              width={80}
+              height={80}
               loading="lazy"
               class="rounded-full"
             />
-          )
-        }
       </div>
-      <span class="text-sm">{author.name}</span>
+      <span class="text-sm">Abi</span>
     </div>
     <span class="text-xs text-gray-300 dark:text-gray-600"> &bull;</span>
     <time class="text-sm" datetime={post.data.publishDate}>

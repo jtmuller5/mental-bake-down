@@ -11,29 +11,24 @@ import Link from "@components/ui/link.astro";
   <Container>
     <Pagetitle>
       <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="desc">I am vibes</Fragment>
     </Pagetitle>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+    <div class="gap-10 mx-auto max-w-4xl mt-12">
       {
         authors.slice(0, 3).map((item) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Image
-                src={item.image}
-                format="avif"
-                width={580}
-                height={580}
-                alt="Team"
-                class="w-full h-full object-cover rounded transition  group-hover:-translate-y-1 group-hover:shadow-xl"
-              />
-            </div>
-
-            <div class="mt-4 text-center">
-              <h3 class="text-sm text-gray-500 dark:text-gray-300">
-                {" "}
-                {item.name}
-              </h3>
+          <div class="group w-full flex justify-center ">
+            <div>
+              <div class="aspect-square h-[500px] w-[500px]">
+                <Image
+                  src={item.image}
+                  format="jpg"
+                  width={2000}
+                  height={2000}
+                  alt="Team"
+                  class="w-full h-full rounded-xl transition  group-hover:-translate-y-1 group-hover:shadow-xl"
+                />
+              </div>
             </div>
           </div>
         ))
@@ -42,9 +37,7 @@ import Link from "@components/ui/link.astro";
 
     <div class="mx-auto max-w-xl text-center mt-14">
       <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        I was born and raised in South Africa and moved to the US in 2018. I live in Arlington Virgnia with my husband and two cats.
       </p>
       <div class="mt-8">
         <Link href="/contact" style="primary">Get in touch</Link>

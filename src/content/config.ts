@@ -5,7 +5,6 @@ const BlogPosts = defineCollection({
     title: z.string(),
     excerpt: z.string(),
     category: z.string().trim(),
-    author: z.string().trim(),
     draft: z.boolean().optional(),
     tags: z.array(z.string()),
     image: z.string().optional(),
